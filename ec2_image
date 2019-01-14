@@ -1,0 +1,14 @@
+
+ - hosts: localhost
+   connection: local
+   gather_facts: false
+   tasks:
+      - name: create ami
+        ec2_ami:
+          instance_id: i-016f841af2927b9d2
+          wait: yes
+          name: ansibleAmi
+          region: ap-southeast-2
+          tags:
+             Name: Ansibleami
+             service: test service
